@@ -239,11 +239,7 @@ func buildPathVars(path string) (res map[string]*string) {
 	res = make(map[string]*string, len(matches))
 	for _, m := range matches {
 		name := strings.TrimSpace(m[1])
-		if len(name) > 1 && len(m[2]) > 0 {
-			res[name] = &m[2]
-		} else {
-			res[name] = nil
-		}
+		res[name] = nil
 	}
 	return
 }
